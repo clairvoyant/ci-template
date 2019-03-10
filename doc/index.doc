@@ -1,0 +1,27 @@
+/*! \mainpage
+
+CITemplate is an example QT Template application containing
+default settings for starting a project that includes libs, unit tests, and internationalization,  
+
+The project is intended to be a cut and paste start template. 
+Including the common project settings of a QT5 project.
+
+ONe of the goals of the project is to have Continous integration and 
+converage in place. Including unit testing and GUI testing.
+
+In order to have a working an minimal project, this project features a basic
+calculator. 
+
+<B>Main Class:</B>
+- CITemplateGUI
+
+<B>Managers to perform specific tasks:</B>
+- CITemplateStackCalculator
+
+<B>Project Details:</B>
+
+- Project Page: https://github.com/clairvoyant/CITemplate/
+- Report Issues: https://github.com/clairvoyant/CITemplate/issues
+- New Releases: https://github.com/clairvoyant/CITemplate/releases
+
+*/
