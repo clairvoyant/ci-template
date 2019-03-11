@@ -14,8 +14,8 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
 add_simple_test(CITemplateTestInternalBasic)
 
-if(BUILD_INTERNAL_TESTS)
-    add_simple_test(CITemplateTestInternal)
-endif()
+# if(BUILD_INTERNAL_TESTS)
+# add_simple_test(CITemplateTestInternal)
+# endif()
 
 
