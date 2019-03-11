@@ -1,5 +1,7 @@
 
-|Travis Status| |AppVeyor Status| |CircleCI Status| |Coverage Status| |PyPI Status| |Documentation Status|
+[![Build Status](https://travis-ci.org/clairvoyant/ci-template.svg)](https://travis-ci.org/clairvoyant/)
+[![Code Coverage](https://ci.appveyor.com/api/projects/status/hak3372yd2c4xb6q?svg=true)](https://ci.appveyor.com/project/clairvoyant/ci-template)
+
 
 ABOUT CITemplate
 ===========
