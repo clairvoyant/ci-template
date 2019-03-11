@@ -36,4 +36,5 @@ cmake .. $CMAKE_ARGS
 make
 
 # run tests
-make test
+#make test
+ctest --output-on-failure
