@@ -4,7 +4,7 @@
 
 #include "StackCalc.hh"
 
-class tst_CITemplateTestInternalBasic: public QObject
+class tst_CITemplateTestBasic: public QObject
 {
       Q_OBJECT
 
@@ -13,11 +13,13 @@ class tst_CITemplateTestInternalBasic: public QObject
       void testBasicAdd();
       void testBasicDiv();
       void testBasicSub();
+      void testBasicClear();
+      void testBasicErrorCheck();
 };
 
 
 void 
-tst_CITemplateTestInternalBasic::testBasicMul()
+tst_CITemplateTestBasic::testBasicMul()
 {
     StackCalc::Calculator calc;
 
@@ -33,7 +35,7 @@ tst_CITemplateTestInternalBasic::testBasicMul()
 }
 
 void 
-tst_CITemplateTestInternalBasic::testBasicAdd()
+tst_CITemplateTestBasic::testBasicAdd()
 {
     StackCalc::Calculator calc;
 
@@ -48,7 +50,7 @@ tst_CITemplateTestInternalBasic::testBasicAdd()
     QCOMPARE(value, 5.0);
 }
 void 
-tst_CITemplateTestInternalBasic::testBasicDiv()
+tst_CITemplateTestBasic::testBasicDiv()
 {
     StackCalc::Calculator calc;
 
@@ -64,7 +66,7 @@ tst_CITemplateTestInternalBasic::testBasicDiv()
 }
 
 void 
-tst_CITemplateTestInternalBasic::testBasicSub()
+tst_CITemplateTestBasic::testBasicSub()
 {
     StackCalc::Calculator calc;
 
@@ -75,10 +77,43 @@ tst_CITemplateTestInternalBasic::testBasicSub()
     double value;
     bool ok = calc.Calc(value);
 
-    QCOMPARE(ok, true);
+    QCOMPARE(ok,    true);
     QCOMPARE(value, 17.0);
 }
 
+void 
+tst_CITemplateTestBasic::testBasicClear()
+{
+    StackCalc::Calculator calc;
 
-QTEST_MAIN(tst_CITemplateTestInternalBasic)
-#include "tst_CITemplateTestInternalBasic.moc"
+    calc.AddNumber(20.0);
+    calc.AddNumber(3.0);
+    calc.AddOperation(StackCalc::ItemType::SUBSTRACT);
+    calc.Clear();
+
+    double value;
+    bool ok = calc.Calc(value);
+
+    QCOMPARE(ok, false);
+}
+
+
+void 
+tst_CITemplateTestBasic::testBasicErrorCheck()
+{
+    StackCalc::Calculator calc;
+
+    calc.AddNumber(20.0);
+    calc.AddNumber(3.0);
+    calc.AddNumber(5.2); // unexpected.
+
+    double value;
+    bool ok = calc.Calc(value);
+
+    QCOMPARE(ok, false);
+}
+
+
+
+QTEST_MAIN(tst_CITemplateTestBasic)
+#include "tst_CITemplateTestBasic.moc"

@@ -12,10 +12,10 @@ include_directories(${PROJECT_SOURCE_DIR}/src/include)
 include_directories(${PROJECT_SOURCE_DIR}/src/gui)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 
-add_simple_test(CITemplateTestInternalBasic)
+add_simple_test(CITemplateTestBasic)
 
 # if(BUILD_INTERNAL_TESTS)
-# add_simple_test(CITemplateTestInternal)
+# add_simple_test(CITemplateTest)
 # endif()
 
 
