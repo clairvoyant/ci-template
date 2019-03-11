@@ -15,7 +15,7 @@ Calculator::IsValid(ItemStack& q, PItem& item1, PItem& item2)
         item2 = q.pop();
         item1 = q.pop();
 
-        if ((item1->_type == NUMBER ) and (item2->_type == NUMBER)) {
+        if ((item1->_type == NUMBER ) && (item2->_type == NUMBER)) {
             valid = true;
         }
     }         
