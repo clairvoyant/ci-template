@@ -6,7 +6,7 @@ using namespace StackCalc;
 
 
 // check 2 operand numbers are available.
-    bool 
+bool 
 Calculator::IsValid(ItemStack& q, PItem& item1, PItem& item2)
 {
     bool valid = false;
@@ -19,6 +19,8 @@ Calculator::IsValid(ItemStack& q, PItem& item1, PItem& item2)
             valid = true;
         }
     }         
+
+    return valid;
 }
 
 

@@ -2,7 +2,6 @@ PROJECT_NAME           = "CITemplate"
 PROJECT_NUMBER         = Version:@VERSION_STRING@
 INPUT                  = @PROJECT_SOURCE_DIR@/doc/index.doc \
                          @PROJECT_SOURCE_DIR@/doc/using.doc \
-                         @PROJECT_SOURCE_DIR@/doc/xep.doc \
                          @PROJECT_SOURCE_DIR@/src
 
 ALPHABETICAL_INDEX     = NO
