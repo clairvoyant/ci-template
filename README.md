@@ -1,6 +1,8 @@
 
 [![Build Status](https://travis-ci.org/clairvoyant/ci-template.svg)](https://travis-ci.org/clairvoyant/)
 [![Code Coverage](https://ci.appveyor.com/api/projects/status/hak3372yd2c4xb6q?svg=true)](https://ci.appveyor.com/project/clairvoyant/ci-template)
+[![codecov](https://codecov.io/gh/clairvoyant/ci-template/branch/master/graph/badge.svg)](https://codecov.io/gh/clairvoyant/ci-template)
+
 
 
 ABOUT CITemplate
