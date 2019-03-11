@@ -1,5 +1,5 @@
-[![Build Status](https://img.shields.io/travis/CITemplate-project/CITemplate.svg)](https://travis-ci.org/CITemplate-project/CITemplate)
-[![Code Coverage](https://img.shields.io/codecov/c/github/CITemplate-project/CITemplate.svg)](https://codecov.io/gh/CITemplate-project/CITemplate)
+
+|Travis Status| |AppVeyor Status| |CircleCI Status| |Coverage Status| |PyPI Status| |Documentation Status|
 
 ABOUT CITemplate
 ===========
