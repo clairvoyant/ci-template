@@ -98,7 +98,7 @@ bool
 Calculator::Calc(double& result)
 {
     result  = 0.0;
-    bool ok = true;
+    bool ok = false;
 
     while ( !_items.isEmpty()) {
         auto item = _items.pop();
@@ -106,19 +106,22 @@ Calculator::Calc(double& result)
         switch (item->_type) {
             case ItemType::SUBSTRACT:
                 result = Sub(_items);
+                ok = true;
                 break;
             case ItemType::MUL:
                 result = Mul(_items);
+                ok = true;
                 break;
             case ItemType::DIV:
                 result = Div(_items);
+                ok = true;
                 break;
             case ItemType::ADD:
                 result = Add(_items);
+                ok = true;
                 break;
             default:
                 _items.clear();
-                ok = false;
                 break;
         }
     }
