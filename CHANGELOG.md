@@ -1,3 +1,7 @@
+CITemplates 0.0.1 (Jan 9, 2019)
+-------------------------
+Added travis.yml integration.
+
 
 CITemplates 0.0.0 (Jan 8, 2019)
 -------------------------
