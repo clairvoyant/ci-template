@@ -18,7 +18,6 @@ target_link_libraries(CITemplateGUI
     Qt5::Xml
 	StackCalc
     PRIVATE
-    ${MULTIMEDIA_LIBS}
 )
 
 
