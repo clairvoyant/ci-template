@@ -3,6 +3,11 @@
 #include <QtTest>
 
 #include "StackCalc.hh"
+#include "calculator.h"
+
+#include <QtWidgets/QLabel>
+#include <QtWidgets/QPushButton>
+
 
 class tst_CITemplateTestForm: public QObject
 {
@@ -10,108 +15,27 @@ class tst_CITemplateTestForm: public QObject
 
     private slots:
       void testFormMul();
-      void testFormAdd();
-      void testFormDiv();
-      void testFormSub();
-      void testFormClear();
-      void testFormErrorCheck();
+    private:
+      Calculator calc;
+
 };
 
 
 void 
 tst_CITemplateTestForm::testFormMul()
 {
-    StackCalc::Calculator calc;
 
-    calc.AddNumber(2.0);
-    calc.AddNumber(3.0);
-    calc.AddOperation(StackCalc::ItemType::MUL);
+    QApplication::setActiveWindow(&calc);
 
-    double value;
-    bool ok = calc.Calc(value);
+    QTest::mouseClick(calc.findChild<QPushButton*>("n2"),     Qt::LeftButton);
+    QTest::mouseClick(calc.findChild<QPushButton*>("mul"),    Qt::LeftButton);
+    QTest::mouseClick(calc.findChild<QPushButton*>("n3"),     Qt::LeftButton);
+    QTest::mouseClick(calc.findChild<QPushButton*>("equals"), Qt::LeftButton);
 
-    QCOMPARE(ok, true);
-    QCOMPARE(value, 6.0);
+    QCOMPARE(calc.findChild<QLabel*>("display")->text(), QString("6"));
+
 }
 
-void 
-tst_CITemplateTestForm::testFormAdd()
-{
-    StackCalc::Calculator calc;
-
-    calc.AddNumber(2.0);
-    calc.AddNumber(3.0);
-    calc.AddOperation(StackCalc::ItemType::ADD);
-
-    double value;
-    bool ok = calc.Calc(value);
-
-    QCOMPARE(ok, true);
-    QCOMPARE(value, 5.0);
-}
-void 
-tst_CITemplateTestForm::testFormDiv()
-{
-    StackCalc::Calculator calc;
-
-    calc.AddNumber(16.0);
-    calc.AddNumber(2.0);
-    calc.AddOperation(StackCalc::ItemType::DIV);
-
-    double value;
-    bool ok = calc.Calc(value);
-
-    QCOMPARE(ok, true);
-    QCOMPARE(value, 8.0);
-}
-
-void 
-tst_CITemplateTestForm::testFormSub()
-{
-    StackCalc::Calculator calc;
-
-    calc.AddNumber(20.0);
-    calc.AddNumber(3.0);
-    calc.AddOperation(StackCalc::ItemType::SUBSTRACT);
-
-    double value;
-    bool ok = calc.Calc(value);
-
-    QCOMPARE(ok,    true);
-    QCOMPARE(value, 17.0);
-}
-
-void 
-tst_CITemplateTestForm::testFormClear()
-{
-    StackCalc::Calculator calc;
-
-    calc.AddNumber(20.0);
-    calc.AddNumber(3.0);
-    calc.AddOperation(StackCalc::ItemType::SUBSTRACT);
-    calc.Clear();
-
-    double value;
-    bool ok = calc.Calc(value);
-
-    QCOMPARE(ok, false);
-}
-
-
-void 
-tst_CITemplateTestForm::testFormErrorCheck()
-{
-    StackCalc::Calculator calc;
-
-    calc.AddNumber(20.0);
-    calc.AddNumber(3.0);
-    calc.AddNumber(5.2); // unexpected.
-
-    double value;
-    bool ok = calc.Calc(value);
-
-    QCOMPARE(ok, false);
-}
 
 
 

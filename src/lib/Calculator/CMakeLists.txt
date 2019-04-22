@@ -12,7 +12,7 @@ find_package(Qt5Gui ${QT_VERSION_REQ} REQUIRED)
 set(CMAKE_AUTOMOC ON)
 QT5_WRAP_UI( UI_HDRS ${UI_FILES} )
 
-add_library(Calculator calculator.cpp)
+add_library(Calculator calculator.cpp moc_calculator)
 
 set_property(TARGET Calculator PROPERTY POSITION_INDEPENDENT_CODE ON)
 
