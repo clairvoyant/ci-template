@@ -19,7 +19,7 @@
 
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
-QT_WARNING_DISABLE_DEPRECATED
+//QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Calculator_t {
     QByteArrayData data[12];
     char stringdata0[165];
