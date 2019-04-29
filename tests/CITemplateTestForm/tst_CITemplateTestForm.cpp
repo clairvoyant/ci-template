@@ -32,7 +32,7 @@ tst_CITemplateTestForm::testFormMul()
     QTest::mouseClick(calc.findChild<QPushButton*>("n3"),     Qt::LeftButton);
     QTest::mouseClick(calc.findChild<QPushButton*>("equals"), Qt::LeftButton);
 
-    QCOMPARE(calc.findChild<QLabel*>("display")->text(), QString("6"));
+    QCOMPARE(calc.findChild<QLabel*>("display")->text(), QString("works"));
 
 }
 
