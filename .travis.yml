@@ -9,6 +9,10 @@ env:
   - CONFIG=minimal
   - CONFIG=full
   - CONFIG=full-debug
+
+services:
+    - xvfb
+
 install:
   - tests/travis/install-build-depends
 matrix:

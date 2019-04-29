@@ -15,6 +15,7 @@ case "$CONFIG" in
     ;;
 esac
 
+CTEST=ctest
 if [ "$(uname -s)" = "Darwin" ]; then
     # pick up cmake files from homebrew
     CMAKE_ARGS="$CMAKE_ARGS -DCMAKE_PREFIX_PATH=/usr/local/opt/qt5"
@@ -22,6 +23,7 @@ else
     # This hides all the paths that contain custom travis binaries like the
     # updated version of cmake.
     export PATH=/usr/sbin:/usr/bin:/sbin:/bin
+    CTEST="xvfb-run --auto-servernum ctest"
 fi
 
 # build with code coverage
@@ -37,4 +39,4 @@ make
 
 # run tests
 #make test
-ctest --output-on-failure
+$CTEST --output-on-failure
